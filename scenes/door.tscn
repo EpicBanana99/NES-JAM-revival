@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cpmvr5evjefhd"]
+
+[ext_resource type="Script" uid="uid://xugoflmlldgc" path="res://scripts/door.gd" id="1_hpvv5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bdm3b"]
+size = Vector2(22, 32)
+
+[node name="Door" type="StaticBody2D" unique_id=609208661]
+script = ExtResource("1_hpvv5")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=349900792]
+centered = false
+
+[node name="CollisionBox" type="CollisionShape2D" parent="." unique_id=262387566]
+position = Vector2(16, 24)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_bdm3b")

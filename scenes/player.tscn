@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bs132g8nrashp"]
+
+[ext_resource type="SpriteFrames" uid="uid://caegbfwwev4k8" path="res://assets/sprite_frames/player_frames.tres" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://cegxub1np4u1u" path="res://scripts/player.gd" id="1_g2els"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_65r24"]
+size = Vector2(16, 16)
+
+[node name="Player" type="CharacterBody2D" unique_id=1415240476]
+script = ExtResource("1_g2els")
+speed = 60
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1577438673]
+sprite_frames = ExtResource("1_3vyb7")
+animation = &"idleUp"
+autoplay = "idleDown"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1353204932]
+shape = SubResource("RectangleShape2D_65r24")

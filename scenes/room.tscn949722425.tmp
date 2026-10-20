@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cs6gmliuwtoqw"]
+
+[ext_resource type="Texture2D" uid="uid://dpj3mo1d7ylqp" path="res://asssets/pngs/Room.png" id="1_36trf"]
+[ext_resource type="PackedScene" uid="uid://bs132g8nrashp" path="res://scenes/player.tscn" id="2_ffxv4"]
+
+[node name="Room" type="Node2D" unique_id=638520451]
+
+[node name="RoomSprite" type="Sprite2D" parent="." unique_id=248891846]
+texture = ExtResource("1_36trf")
+centered = false
+
+[node name="Player" parent="." unique_id=1415240476 instance=ExtResource("2_ffxv4")]
+speed = 100
