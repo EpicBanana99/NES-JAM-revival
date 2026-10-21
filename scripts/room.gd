@@ -1,4 +1,5 @@
 extends StaticBody2D
+class_name Room
 
 var wall = preload("res://scenes/wall.tscn")
 var door = preload("res://scenes/door.tscn")
