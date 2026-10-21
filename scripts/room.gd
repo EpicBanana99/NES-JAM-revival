@@ -3,7 +3,7 @@ extends StaticBody2D
 var wall = preload("res://scenes/wall.tscn")
 var door = preload("res://scenes/door.tscn")
 
-var room_color = Global.colors.YELLOW
+var room_color = Global.colors.GREEN
 var wall_markers = []
 
 func set_wall(direction: Global.directions, color: Global.colors):
@@ -57,9 +57,9 @@ func _ready() -> void:
 
 func set_walls():
 	set_wall(Global.directions.LEFT, room_color)
-	set_door(Global.directions.RIGHT, room_color, Door.types.CLOSED)
+	set_door(Global.directions.RIGHT, room_color, Door.types.BOSS)
 	set_door(Global.directions.UP, room_color, Door.types.CRACKED)
-	set_door(Global.directions.DOWN, room_color, Door.types.OPEN)
+	set_door(Global.directions.DOWN, room_color, Door.types.KEY)
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("open"):

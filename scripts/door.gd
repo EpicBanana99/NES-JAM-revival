@@ -6,6 +6,7 @@ enum types {CLOSED, CRACKED, KEY, BOSS, OPEN, BOMBED}
 var dir = Global.directions.LEFT
 var col = Global.colors.GREEN
 var typ = types.CLOSED
+var is_boss = false
 
 func render_door(direction: Global.directions, color: Global.colors, type : types):
 	var dir_string = "horizontal"
@@ -15,7 +16,7 @@ func render_door(direction: Global.directions, color: Global.colors, type : type
 	typ = type
 	dir = direction
 	col = color
-	
+
 	if direction == Global.directions.LEFT :
 		$Sprite.flip_h = false
 	elif direction == Global.directions.RIGHT:
@@ -39,13 +40,17 @@ func render_door(direction: Global.directions, color: Global.colors, type : type
 		type_string = "cracked"
 	elif type == types.BOSS :
 		type_string = "boss"
+		is_boss = true
 	elif type == types.KEY :
 		type_string = "key"
 	elif type == types.OPEN :
 		type_string = "open"
 	elif type == types.BOMBED :
 		type_string = "bombed"
+
 	$CollisionBox.disabled = false
+	if get_children().size() > 2:
+		get_child(2).queue_free()
 	if type == types.BOMBED or type == types.OPEN:
 		$CollisionBox.disabled = true
 		var sub_sprite = Sprite2D.new()
@@ -71,6 +76,8 @@ func open_door():
 func close_door():
 	if typ == types.BOMBED or typ == types.CRACKED:
 		render_door(dir, col, types.CRACKED)
+	elif is_boss:
+		render_door(dir, col, types.BOSS)
 	else:
 		render_door(dir, col, types.CLOSED)
 	
