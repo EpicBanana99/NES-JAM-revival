@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://coo280g5fibfa"]
+
+[ext_resource type="Script" uid="uid://jxg7pwtl7ydd" path="res://scripts/boss_room.gd" id="1_hkx70"]
+[ext_resource type="Texture2D" uid="uid://ch36vvjuovmdi" path="res://assets/pngs/BossRoom.png" id="2_hkx70"]
+
+[node name="BossRoom" type="StaticBody2D" unique_id=1139569311]
+script = ExtResource("1_hkx70")
+
+[node name="RoomSprite" type="Sprite2D" parent="." unique_id=1124627123]
+texture = ExtResource("2_hkx70")
+centered = false
+
+[node name="Corner2" type="CollisionPolygon2D" parent="." unique_id=1267612598]
+visible = false
+polygon = PackedVector2Array(139, 32, 224, 32, 224, 109, 256, 109, 256, 0, 139, 0)
+
+[node name="Corner3" type="CollisionPolygon2D" parent="." unique_id=2131467559]
+visible = false
+position = Vector2(0, 144)
+polygon = PackedVector2Array(224, 64, 140, 64, 140, 96, 256, 96, 256, -13, 224, -13)
+
+[node name="Corner4" type="CollisionPolygon2D" parent="." unique_id=2073244529]
+visible = false
+position = Vector2(-144, 144)
+polygon = PackedVector2Array(144, -13, 144, 96, 260, 96, 260, 64, 176, 64, 176, -13)
+
+[node name="Corner" type="CollisionPolygon2D" parent="." unique_id=5517085]
+visible = false
+position = Vector2(2, 0)
+polygon = PackedVector2Array(-2, 0, -2, 109, 30, 109, 30, 32, 115, 32, 115, 0)
+
+[node name="LeftWallMarker" type="Marker2D" parent="." unique_id=572631187]
+position = Vector2(0, 96)
+
+[node name="RightWallMarker" type="Marker2D" parent="." unique_id=634230092]
+position = Vector2(224, 96)
+
+[node name="UpWallMarker" type="Marker2D" parent="." unique_id=2076061582]
+position = Vector2(112, 0)
+
+[node name="DownWallMarker" type="Marker2D" parent="." unique_id=1618137012]
+position = Vector2(112, 208)
