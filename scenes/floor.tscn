@@ -1,11 +1,18 @@
 [gd_scene format=3 uid="uid://dduyb2hfunbe4"]
 
 [ext_resource type="Script" uid="uid://b1707qkxlsr8r" path="res://scripts/floor.gd" id="1_ukw5w"]
-[ext_resource type="Script" uid="uid://c6txuqh408pu2" path="res://scenes/camera_2d.gd" id="2_kuqtn"]
+[ext_resource type="PackedScene" uid="uid://bs132g8nrashp" path="res://scenes/player.tscn" id="2_3lc0u"]
+[ext_resource type="Script" uid="uid://c6txuqh408pu2" path="res://scripts/camera_2d.gd" id="2_kuqtn"]
 [ext_resource type="Texture2D" uid="uid://dwrw2eer325m" path="res://assets/pngs/CameraMarker.png" id="3_whr1e"]
 
 [node name="Floor" type="Node2D" unique_id=1311672525]
 script = ExtResource("1_ukw5w")
+min_rooms = null
+max_rooms = null
+
+[node name="Player" parent="." unique_id=1415240476 instance=ExtResource("2_3lc0u")]
+z_index = 1
+position = Vector2(128, 120)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=342638674]
 anchor_mode = 0

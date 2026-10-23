@@ -4,7 +4,7 @@ class_name Room
 var wall = preload("res://scenes/wall.tscn")
 var door = preload("res://scenes/door.tscn")
 
-var cords = [0,0]
+var cords = Vector2(0,0)
 
 @export var room_color = Global.colors.GREEN
 var wall_markers = []
